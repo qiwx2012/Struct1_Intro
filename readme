@@ -1,0 +1,35 @@
+  Struts
+  .Apache组织的一个开源项目，主要采用Servlet和jsp技术实现，是基于
+   javaEE平台大的MVC框架
+   
+   .常用的组件
+     ActionServlet、 Action、  ActionForm、  ActionMapping
+	 ActionForWard
+   
+ structs工程创建步骤
+ 1、创建一个web工程
+ 2、添加jar包
+ 3、创建一个Struts配置文件 structs-config.xml
+ 4、在web.xml配置文件中
+    <servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.structs.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+  5、创建一个action	
+  6、在struts-config中配置action
+  <action-mappings>
+       <action path="/login" type="com.qiwx.action.LoginAction"></action>
+</action-mappings>
+
+7、创建一个LoginForm 在配置文件中配置
+    <form-beans>
+		<form-bean name="loginForm" type="com.qiwx.form.LoginForm"></form-bean>
+	</form-beans>
